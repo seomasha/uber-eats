@@ -30,22 +30,21 @@ const BottomBarNavigation: React.FC = () => {
       }}
     >
       {tabScreens.map((screen) => (
-        <React.Fragment key={screen.name}>
-          <Tab.Screen
-            name={screen.name}
-            component={screen.component}
-            options={{
-              tabBarIcon: ({ focused }) => (
-                <BottomBarItem
-                  icon={screen.icon}
-                  text={screen.name}
-                  focused={focused}
-                />
-              ),
-              tabBarLabel: () => null,
-            }}
-          />
-        </React.Fragment>
+        <Tab.Screen
+          key={screen.name}
+          name={screen.name}
+          component={screen.component}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <BottomBarItem
+                icon={screen.icon}
+                text={screen.name}
+                focused={focused}
+              />
+            ),
+            tabBarLabel: () => null,
+          }}
+        />
       ))}
     </Tab.Navigator>
   );

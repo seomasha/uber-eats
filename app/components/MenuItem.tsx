@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
 import Fonts from "../constants/Fonts";
 import { Typography } from "../theme/Typography";
-import Icon from "react-native-vector-icons/MaterialIcons";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface MenuItemProps {
   iconName: string;
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 10,
     width: "100%",
   },
   icon: {
@@ -39,7 +40,9 @@ const styles = StyleSheet.create({
     color: Colors.text.primary,
   },
   textContainer: {
+    flex: 1,
     paddingHorizontal: 24,
+    justifyContent: "center",
   },
   text: {
     fontSize: 16,

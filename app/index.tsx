@@ -1,5 +1,6 @@
-import BottomBarNavigation from "./components/BottomBarNavigation";
+import React from "react";
+import MyProfile from "./screens/MyProfile";
 
 export default function Index() {
-  return <BottomBarNavigation />;
+  return <MyProfile />;
 }
