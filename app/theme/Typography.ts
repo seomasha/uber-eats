@@ -1,5 +1,5 @@
-import { Colors } from "../constants/Colors";
-import { Fonts } from "../constants/Fonts";
+import Colors from "../constants/Colors";
+import Fonts from "../constants/Fonts";
 
 export const Typography = {
   title: {
@@ -17,6 +17,16 @@ export const Typography = {
     fontFamily: Fonts.regular,
     color: Colors.text.primary,
   },
+  menuItem: {
+    fontSize: 14,
+    fontFamily: Fonts.medium,
+    color: Colors.text.primary,
+  },
+  menuItemAccent: {
+    fontSize: 14,
+    fontFamily: Fonts.medium,
+    color: Colors.accent.green,
+  },
   ovalButtonText: {
     fontSize: 18,
     fontFamily: Fonts.bold,
@@ -29,6 +39,11 @@ export const Typography = {
   },
   paragraph: {
     fontSize: 12,
+    fontFamily: Fonts.regular,
+    color: Colors.text.gray,
+  },
+  bottomBarText: {
+    fontSize: 10,
     fontFamily: Fonts.regular,
     color: Colors.text.gray,
   },

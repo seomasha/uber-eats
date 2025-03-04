@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
   text: {
     primary: "#000000",
     gray: "#888888",
@@ -24,3 +24,5 @@ export const Colors = {
     orange_60: "#E7C09299",
   },
 };
+
+export default Colors;
