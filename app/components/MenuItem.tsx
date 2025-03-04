@@ -8,7 +8,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 interface MenuItemProps {
   iconName: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({

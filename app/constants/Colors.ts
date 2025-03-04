@@ -14,6 +14,7 @@ const Colors = {
 
   icon: {
     gray: "#B5B5B5",
+    dark_gray: "#7F7F7F",
   },
 
   accent: {

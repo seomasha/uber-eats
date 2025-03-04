@@ -30,12 +30,11 @@ export const Typography = {
   ovalButtonText: {
     fontSize: 18,
     fontFamily: Fonts.bold,
-    color: Colors.text.primary,
+    color: Colors.text.gray,
   },
   rectangleButtonText: {
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: Fonts.bold,
-    color: Colors.text.gray,
   },
   paragraph: {
     fontSize: 12,
