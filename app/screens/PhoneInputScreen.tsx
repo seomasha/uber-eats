@@ -6,7 +6,7 @@ import PhoneNumberInput from "../components/PhoneNumberInput";
 import RectangleButton from "../components/RectangleButton";
 import HorizontalBreak from "../components/HorizontalBreak";
 
-const PhoneInput = () => {
+const PhoneInputScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={[Typography.subtitle, styles.header]}>
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PhoneInput;
+export default PhoneInputScreen;

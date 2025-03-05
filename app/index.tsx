@@ -1,6 +1,6 @@
 import React from "react";
-import PasswordInputScreen from "./screens/PasswordInputScreen"
+import PhoneVerificationScreen from "./screens/PhoneVerificationScreen";
 
 export default function Index() {
-  return <PasswordInputScreen />;
+  return <PhoneVerificationScreen />;
 }
