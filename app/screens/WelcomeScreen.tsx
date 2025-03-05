@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     padding: 8,
+    marginTop: 80,
   },
   iconContainer: {
     padding: 16,

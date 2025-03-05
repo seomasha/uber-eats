@@ -35,7 +35,7 @@ const PhoneVerificationScreen: React.FC = () => {
           text="Next"
           onPress={() => {}}
           trailingIcon="arrow-right"
-          flex={0.5}
+          width="50%"
           marginRight={24}
         />
       </View>
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     justifyContent: "space-between",
+    marginTop: 105,
   },
   header: {
     paddingHorizontal: 16,
