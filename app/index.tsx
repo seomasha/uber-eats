@@ -8,7 +8,8 @@ import PasswordInputScreen from "./screens/PasswordInputScreen";
 import MyProfileScreen from "./screens/MyProfileScreen";
 import SearchCategoriesScreen from "./screens/SearchCategoriesScreen";
 import SearchScreen from "./screens/SearchScreen";
+import DealsScreen from "./screens/DealsScreen";
 
 export default function Index() {
-  return <SearchScreen />;
+  return <DealsScreen />;
 }
