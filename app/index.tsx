@@ -6,7 +6,8 @@ import PhoneVerificationScreen from "./screens/PhoneVerificationScreen";
 import PhoneInputScreen from "./screens/PhoneInputScreen";
 import PasswordInputScreen from "./screens/PasswordInputScreen";
 import MyProfileScreen from "./screens/MyProfileScreen";
+import SearchCategoriesScreen from "./screens/SearchCategoriesScreen";
 
 export default function Index() {
-  return <MyProfileScreen />;
+  return <SearchCategoriesScreen />;
 }

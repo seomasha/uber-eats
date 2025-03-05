@@ -28,7 +28,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
     <View
       style={[
         styles.container,
-        { borderColor: isFocused ? "black" : Colors.border.gray }, // Apply border color on focus
+        { borderColor: isFocused ? "black" : Colors.border.gray },
       ]}
     >
       <TextInput
