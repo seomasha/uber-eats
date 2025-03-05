@@ -6,24 +6,18 @@ import RoundedButton from "../components/RoundedButton";
 import Colors from "../constants/Colors";
 import OtpInput from "../components/OtpInput";
 
-const PhoneVerificationScreen: React.FC = () => {
+const EmailVerificationScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View>
         <Text style={[Typography.subtitle, styles.header]}>
-          Enter the 4-digit code sent to you at 05599224612
+          Enter the 4-digit code sent to you at: johndoe@email.com
         </Text>
         <OtpInput />
+        <Text style={[Typography.paragraph, { paddingHorizontal: 16, paddingBottom: 16, marginTop: 10 }]}>
+          Tip: Make sure to check your inbox and spam folders.
+        </Text>
         <View style={styles.helperContainer}>
-          <Text
-            style={[
-              styles.helperText,
-              Typography.body,
-              { color: Colors.text.gray },
-            ]}
-          >
-            I haven't received a code (0.09)
-          </Text>
           <Text style={[styles.helperText, Typography.body]}>
             Log in with password
           </Text>
@@ -63,7 +57,6 @@ const styles = StyleSheet.create({
   helperContainer: {
     padding: 16,
     gap: 16,
-    marginTop: 16,
   },
   helperText: {
     backgroundColor: Colors.background.gray,
@@ -74,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PhoneVerificationScreen;
+export default EmailVerificationScreen;
