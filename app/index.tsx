@@ -1,6 +1,6 @@
 import React from "react";
-import MyProfile from "./screens/MyProfile";
+import LandingScreen from "./screens/LandingScreen";
 
 export default function Index() {
-  return <MyProfile />;
+  return <LandingScreen />;
 }
