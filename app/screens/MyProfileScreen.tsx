@@ -50,7 +50,7 @@ const MyProfileScreen: React.FC = () => {
       <Text
         style={{
           paddingHorizontal: 32,
-          paddingVertical: 48,
+          paddingBottom: 100,
           fontSize: 12,
         }}
       >
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    marginTop: 55
   },
   headerContainer: {
     flexDirection: "row",
