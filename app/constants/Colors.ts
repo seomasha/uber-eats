@@ -23,6 +23,7 @@ const Colors = {
     purple_60: "#7E2DD099",
     purple_30: "#7E2DD04D",
     orange_60: "#E7C09299",
+    blue: "#276EF1",
   },
 };
 

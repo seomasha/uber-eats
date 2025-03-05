@@ -14,7 +14,12 @@ const EmailVerificationScreen: React.FC = () => {
           Enter the 4-digit code sent to you at: johndoe@email.com
         </Text>
         <OtpInput />
-        <Text style={[Typography.paragraph, { paddingHorizontal: 16, paddingBottom: 16, marginTop: 10 }]}>
+        <Text
+          style={[
+            Typography.paragraph,
+            { paddingHorizontal: 16, paddingBottom: 16, marginTop: 10 },
+          ]}
+        >
           Tip: Make sure to check your inbox and spam folders.
         </Text>
         <View style={styles.helperContainer}>
@@ -29,7 +34,7 @@ const EmailVerificationScreen: React.FC = () => {
           text="Next"
           onPress={() => {}}
           trailingIcon="arrow-right"
-          flex={0.5}
+          width="50%"
           marginRight={24}
         />
       </View>

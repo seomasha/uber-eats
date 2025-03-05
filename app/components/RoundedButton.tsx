@@ -9,9 +9,10 @@ interface ButtonProps {
   onPress: () => void;
   leadingIcon?: string;
   trailingIcon?: string;
-  flex?: number;
+  width?: number | string; // Allow both number and string
   marginRight?: number;
   marginLeft?: number;
+  dark?: boolean;
 }
 
 const RoundedButton: React.FC<ButtonProps> = ({
@@ -19,14 +20,20 @@ const RoundedButton: React.FC<ButtonProps> = ({
   onPress,
   leadingIcon,
   trailingIcon,
-  flex = 1,
+  width = "100%",
   marginRight = 28,
-  marginLeft = 28
+  marginLeft = 28,
+  dark = false,
 }) => {
-  const isSmallFlex = flex < 0.8;
+  const isSmallWidth = typeof width === "number" && width < 200; // Assuming small width if less than 200px
 
   return (
-    <View style={[styles.container, { flex }]}>
+    <View
+      style={[
+        styles.container,
+        { width: typeof width === "number" ? width : undefined },
+      ]}
+    >
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <View style={styles.buttonContainer}>
           {leadingIcon && (
@@ -37,22 +44,27 @@ const RoundedButton: React.FC<ButtonProps> = ({
               styles.buttonText,
               Typography.rectangleButtonText,
               {
-                marginLeft: trailingIcon && isSmallFlex ? 0 : marginLeft,
-                marginRight: leadingIcon && isSmallFlex ? 0 : marginRight,
-                textAlign: isSmallFlex
+                marginLeft: trailingIcon && isSmallWidth ? 0 : marginLeft,
+                marginRight: leadingIcon && isSmallWidth ? 0 : marginRight,
+                textAlign: isSmallWidth
                   ? leadingIcon
                     ? "left"
                     : trailingIcon
                     ? "right"
                     : "center"
                   : "center",
+                color: dark ? Colors.text.primary : Colors.text.gray,
               },
             ]}
           >
             {text}
           </Text>
           {trailingIcon && (
-            <Icon name={trailingIcon} size={28} color={Colors.icon.dark_gray} />
+            <Icon
+              name={trailingIcon}
+              size={28}
+              color={dark ? Colors.text.primary : Colors.icon.dark_gray}
+            />
           )}
         </View>
       </TouchableOpacity>
@@ -74,7 +86,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: Colors.text.gray,
     textAlign: "center",
-    flex: 1,
     fontWeight: "700",
   },
   buttonContainer: {

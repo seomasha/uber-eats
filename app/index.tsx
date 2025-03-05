@@ -1,7 +1,6 @@
 import React from "react";
-import EmailVerificationScreen from "./screens/EmailVerificationScreen";
-import PhoneVerificationScreen from "./screens/PhoneVerificationScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
 
 export default function Index() {
-  return <PhoneVerificationScreen />;
+  return <WelcomeScreen />;
 }
