@@ -9,6 +9,9 @@ interface ButtonProps {
   onPress: () => void;
   leadingIcon?: string;
   trailingIcon?: string;
+  flex?: number;
+  marginRight?: number;
+  marginLeft?: number;
 }
 
 const RoundedButton: React.FC<ButtonProps> = ({
@@ -16,9 +19,14 @@ const RoundedButton: React.FC<ButtonProps> = ({
   onPress,
   leadingIcon,
   trailingIcon,
+  flex = 1,
+  marginRight = 28,
+  marginLeft = 28
 }) => {
+  const isSmallFlex = flex < 0.8;
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { flex }]}>
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <View style={styles.buttonContainer}>
           {leadingIcon && (
@@ -29,8 +37,15 @@ const RoundedButton: React.FC<ButtonProps> = ({
               styles.buttonText,
               Typography.rectangleButtonText,
               {
-                marginLeft: trailingIcon ? 28 : 0,
-                marginRight: leadingIcon ? 28 : 0,
+                marginLeft: trailingIcon && isSmallFlex ? 0 : marginLeft,
+                marginRight: leadingIcon && isSmallFlex ? 0 : marginRight,
+                textAlign: isSmallFlex
+                  ? leadingIcon
+                    ? "left"
+                    : trailingIcon
+                    ? "right"
+                    : "center"
+                  : "center",
               },
             ]}
           >
@@ -51,7 +66,7 @@ const styles = StyleSheet.create({
   },
   button: {
     justifyContent: "center",
-    padding: 18,
+    padding: 14,
     backgroundColor: Colors.background.gray,
     borderRadius: 30,
     borderColor: Colors.border.gray,
@@ -60,6 +75,7 @@ const styles = StyleSheet.create({
     color: Colors.text.gray,
     textAlign: "center",
     flex: 1,
+    fontWeight: "700",
   },
   buttonContainer: {
     flexDirection: "row",

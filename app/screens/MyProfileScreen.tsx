@@ -27,7 +27,7 @@ const menuData = [
   { id: 11, title: "Settings", iconName: "cogs" },
 ];
 
-const MyProfile: React.FC = () => {
+const MyProfileScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyProfile;
+export default MyProfileScreen;

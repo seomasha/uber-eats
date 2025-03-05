@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 16,
     marginTop: 48,
+    fontWeight: "500",
   },
   phoneNumber: {
     flexDirection: "row",

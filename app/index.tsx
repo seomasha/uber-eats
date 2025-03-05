@@ -1,6 +1,6 @@
 import React from "react";
-import PhoneInput from "./screens/PhoneInput";
+import PasswordInputScreen from "./screens/PasswordInputScreen"
 
 export default function Index() {
-  return <PhoneInput />;
+  return <PasswordInputScreen />;
 }
