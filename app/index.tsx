@@ -7,7 +7,8 @@ import PhoneInputScreen from "./screens/PhoneInputScreen";
 import PasswordInputScreen from "./screens/PasswordInputScreen";
 import MyProfileScreen from "./screens/MyProfileScreen";
 import SearchCategoriesScreen from "./screens/SearchCategoriesScreen";
+import SearchScreen from "./screens/SearchScreen";
 
 export default function Index() {
-  return <SearchCategoriesScreen />;
+  return <SearchScreen />;
 }
