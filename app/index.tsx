@@ -1,6 +1,6 @@
 import React from "react";
-import LandingScreen from "./screens/LandingScreen";
+import PhoneInput from "./screens/PhoneInput";
 
 export default function Index() {
-  return <LandingScreen />;
+  return <PhoneInput />;
 }

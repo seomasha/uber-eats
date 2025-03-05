@@ -1,15 +1,16 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import Colors from "../constants/Colors";
 import { Typography } from "../theme/Typography";
-import Icon from "react-native-vector-icons/MaterialIcons";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface ButtonProps {
   text: string;
   onPress: () => void;
-  leadingIcon?: string;
-  trailingIcon?: string;
+  leadingIcon?: string | any; // Icon name as string or image as object
+  trailingIcon?: string | any; // Icon name as string or image as object
   variant: "filled" | "outlined";
+  iconColor?: string;
 }
 
 const RectangleButton: React.FC<ButtonProps> = ({
@@ -18,7 +19,23 @@ const RectangleButton: React.FC<ButtonProps> = ({
   leadingIcon,
   trailingIcon,
   variant,
+  iconColor,
 }) => {
+  const defaultColor = variant === "filled" ? "white" : Colors.text.primary;
+  const appliedIconColor = iconColor || defaultColor;
+
+  // Helper function to render icons or images
+  const renderIcon = (icon: any) => {
+    if (typeof icon === "string") {
+      // Render icon using Icon component (for icon names)
+      return <Icon name={icon} size={24} color={appliedIconColor} />;
+    } else if (icon) {
+      // Render image if it's an image object
+      return <Image source={icon} style={styles.iconImage} />;
+    }
+    return null;
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -34,13 +51,7 @@ const RectangleButton: React.FC<ButtonProps> = ({
         onPress={onPress}
       >
         <View style={styles.buttonContainer}>
-          {leadingIcon && (
-            <Icon
-              name={leadingIcon}
-              size={28}
-              color={variant === "filled" ? "white" : Colors.text.primary}
-            />
-          )}
+          {leadingIcon && renderIcon(leadingIcon)}
           <Text
             style={[
               styles.buttonText,
@@ -48,19 +59,13 @@ const RectangleButton: React.FC<ButtonProps> = ({
               {
                 marginLeft: trailingIcon ? 28 : 0,
                 marginRight: leadingIcon ? 28 : 0,
-                color: variant === "filled" ? "white" : Colors.text.primary,
+                color: defaultColor,
               },
             ]}
           >
             {text}
           </Text>
-          {trailingIcon && (
-            <Icon
-              name={trailingIcon}
-              size={28}
-              color={variant === "filled" ? "white" : Colors.text.primary}
-            />
-          )}
+          {trailingIcon && renderIcon(trailingIcon)}
         </View>
       </TouchableOpacity>
     </View>
@@ -80,11 +85,17 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     flex: 1,
+    fontWeight: "bold",
   },
   buttonContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+  },
+  iconImage: {
+    width: 24,
+    height: 24,
+    marginRight: 8,
   },
 });
 
